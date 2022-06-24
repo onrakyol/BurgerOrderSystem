@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "1f582eb9-9b7b-4323-ba43-bc77570156b6",
+		"name": "Yemeksepeti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Müşteri",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ugurozy@musteri.nett\",\r\n    \"username\":\"ugurozy\",\r\n    \"name\":\"Ugur Ozyali\",\r\n    \"password\": \"ugurozy1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"melike@aaaa.com\", \"username\":\"melike\", \"name\":\"melike\", \"password\": \"melike\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menü",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0NDc1MTY3OCwianRpIjoiZTQzODcyMGUtYmViMC00ZTFhLWFjNmYtOTI0NmY2OTFkOTY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNjQ0NzUxNjc4LCJleHAiOjE2NDUzNTY0Nzh9.sxGb1_eHrz3jSUSCMyQkB2KUDzukY3kUdZS8z6qGQsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/client/Menu/100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"Menu",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restoranlar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0NDc1MTY3OCwianRpIjoiZTQzODcyMGUtYmViMC00ZTFhLWFjNmYtOTI0NmY2OTFkOTY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNjQ0NzUxNjc4LCJleHAiOjE2NDUzNTY0Nzh9.sxGb1_eHrz3jSUSCMyQkB2KUDzukY3kUdZS8z6qGQsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/client/Restaurants",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"Restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/client/cancelOrder/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"cancelOrder",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"restorantId\": 100, \"orderID\": 1, \"userid\": 2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/client/createOrder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"createOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/client/getAllOrder/972",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"getAllOrder",
+								"972"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restorant",
+			"item": [
+				{
+					"name": "getAllOrder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)\r",
+									"pm.environment.set(\"orderId\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/getAllOrder/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getAllOrder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/getOrderDetail/{{orderId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getOrderDetail",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\": \"NEW\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/updateContent/{{orderId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"updateContent",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMenu",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)\r",
+									"pm.environment.set(\"selectedContent\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/getMenu/{{restorantId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getMenu",
+								"{{restorantId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSelectedContent",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/getSelectedContent/{{selectedContent}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getSelectedContent",
+								"{{selectedContent}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSelectedContent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Deneme\", \"price\": \"22\",\"description\": \"Deneme update\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/updateSelectedContent/{{selectedContent}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"updateSelectedContent",
+								"{{selectedContent}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addContent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":\"Deneme_Insert\", \"price\": \"33\",\"description\": \"Deneme update_Insert\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/addContent/{{restorantId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"addContent",
+								"{{restorantId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":\"Deneme_Insert\", \"price\": \"33\",\"description\": \"Deneme update_Insert\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/deleteContent/{{selectedContent}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"deleteContent",
+								"{{selectedContent}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
